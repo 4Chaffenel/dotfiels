@@ -100,7 +100,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+F1 floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
@@ -116,7 +116,7 @@ bindsym $mod+a focus parent
 set $ws1 "1"
 assign [class="Alacritty"] $ws1
 set $ws2 "2"
-assign [class="LibreWolf"] $ws2
+assign [class="librewolf"] $ws2
 set $ws3 "3"
 assign [class="Thunar"] $ws3
 set $ws4 "4"
