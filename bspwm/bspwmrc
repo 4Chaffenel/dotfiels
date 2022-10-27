@@ -4,16 +4,25 @@ pgrep -x sxhkd > /dev/null || sxhkd &
 
 bspc monitor -d I II III IV V VI
 
-bspc config border_width         0
+bspc config border_width         3
 bspc config window_gap          12
 bspc config split_ratio          0.5
 bspc config borderless_monocle   true
 bspc config gapless_monocle      true
+bspc config normal_border_color "#689d6a"
+bspc config focused_border_color "#8ec07c" 
+bspc config presel_border_color "#8ec07c"
+bspc rule -a Alacritty desktop=I
+bspc rule -a Firefox desktop=II
+bspc rule -a Nemo desktop=III
+bpsc rule -a geany desktop=IV
+bspc rule -a Steam state=floating center=on follow=on border=off  desktop=V
+bspc rule -a discord desktop=VI
 
-bspc rule -a Steam state=floating center=on follow=on border=off
-~/.config/polybar/launch.sh &
-
-setxkbmap tr &
+xsetroot -cursor_name left_ptr &
+exec dbus-run-session bspwm &
+feh --bg-center $HOME/Pictures/gruv-4.jpg &
 picom --experimental-backends &
-exec bspwm &
-nitrogen --restore &
+setxkbmap tr &
+~/.config/polybar/launch.sh &
+exec --no-startup-id /usr/libexec/xfce-polkit &

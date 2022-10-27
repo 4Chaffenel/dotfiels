@@ -7,21 +7,31 @@ super + t
 	alacritty
 
 super + f
-	Thunar
+	nemo
 
+super + w
+	firefox
+	
 super + m
 	$HOME/.config/rofi/launchers/launcher.sh	
 	
 super + shift + x
 	$HOME/.config/rofi/powermenu/powermenu.sh
 
+super + Print
+	flameshot gui --delay 3000
+
 #
 # bspwm hotkeys
 #
 
+# make sxhkd reload its configuration files:
+super + Escape
+	pkill -USR1 -x sxhkd
+
 # quit/restart bspwm
 super + shift + q
-	$HOME/.config
+	bspc {quit,wm -r}
 
 # close and kill
 super + q
@@ -76,7 +86,7 @@ super + {grave,Tab}
 	bspc {node,desktop} -f last
 
 # focus the older or newer node in the focus history
-super + {o,i}
+super + o
 	bspc wm -h off; \
 	bspc node {older,newer} -f; \
 	bspc wm -h on

@@ -22,7 +22,7 @@ configuration {
     message-padding:             12px;
     message-border-radius:       12px;
     listview-spacing:            25px;
-    element-padding:             85px 20px 20px 20px;
+    element-padding:             40px 20px 40px 20px;
     element-border-radius:       30px;
 
     prompt-font:                 "Iosevka Nerd Font Bold 48";
